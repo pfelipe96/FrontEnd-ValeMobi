@@ -1,0 +1,27 @@
+.h1-header{
+  text-align: center;
+}
+
+button.button-voltar{
+  float: left;
+}
+
+.row{
+  margin: auto;
+}
+
+.button-search button{
+  padding: 0 1rem;
+}
+
+.button-search{
+  margin-top: 20px;
+}
+
+.collection-item{
+  text-align: center;
+}
+
+h5{
+  text-align: center;
+}

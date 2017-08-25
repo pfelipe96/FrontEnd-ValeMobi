@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="css/styles-investidores.css">
+<title>Investidores - Astra Investimentos</title>
+
+<ng-include src="'header.html'"></ng-include>
+
+<section class="container">
+    <div class="h1-header card">
+      <div class="card-content">
+        <h1>Investidores</h1>
+        <button class="btn waves-effect waves-light blue" type="submit" ng-click="cadastrarInvestidor()">
+          Cadastrar Investidor
+          <i class="material-icons right">person_add</i>
+        </button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="row">
+          <form class="col s12">
+              <div class="button-search col s1">
+                <button class="btn">
+                  <i class="material-icons">search</i>
+                </button>
+              </div>
+              <div class="input-field col s11">
+                <input type="text" id="search" placeholder="Pesquisar Investidor">
+              </div>
+          </form>
+        </div>
+        <div class="card hoverable" id="card-investidor" ng-repeat="investidor in investidores">
+          <div class="card-content">
+            <div class="row">
+              <a href="#!/detalhe-investidor/{{investidor._id}}" ng-model="investidor._id">
+                <div class="col s11">
+                  <p>{{investidor.nome}}</p>
+                </div>
+              </a>
+              <div class="col s1">
+                <button class="hoverable
+
+                button-delete-investidor btn waves-effect waves-light red" ng-click="apagarInvestidor(investidor)">
+                  <i class="material-icons">delete</i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

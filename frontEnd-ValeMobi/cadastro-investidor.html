@@ -1,0 +1,115 @@
+<link rel="stylesheet" href="css/styles-cadastro.css">
+<title>Cadastro - Astra Investimentos</title>
+
+<ng-include src="'header.html'"></ng-include>
+
+<section class="container">
+    <div>
+      <button class="button-voltar btn waves-effect waves-light blue" type="submit" ng-click="buttonBack()"> Voltar
+        <i class="material-icons left">arrow_back</i>
+      </button>
+    </div>
+    <div class="h1-header card">
+      <div class="card-content">
+        <h1>Cadastro de Investidor PF</h1>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="nome" type="text" ng-model="dados.nome" class="validate" >
+                <label for="nome">Nome Completo</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="cpf" type="number" ng-model="dados.cpf"><br>
+                <label for="cpf">CPF</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="dataNasc" type="date" ng-model="dados.dataNasc">
+                <label for="dataNasc60" class="active">Data de Nascimento</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="email" type="email" placeholder="Digite o e-mail do investidor "ng-model="dados.email" class="validate">
+                <label for="email" class="active" data-error="wrong" data-success="right">E-mail</label>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <div class="input-field col s6">
+                    <input id="logradouro" type="text" placeholder="Digite o Logradouro do Investidor" ng-model="dados.logradouro">
+                    <label for="logradouro" class="active">Logradouro</label>
+                  </div>
+                  <div class="input-field col s1">
+                    <input id="enderecoNumero" type="number" placeholder="Nº" ng-model="dados.enderecoNumero">
+                    <label for="dataNasc" class="active">Número</label>
+                  </div>
+                  <div class="input-field col s2">
+                    <input id="prefixed" type="number" placeholder="Digite o CEP" ng-model="dados.enderecoCEP" min="8">
+                    <label for="dataNasc" class="active">CEP</label>
+                  </div>
+                  <div class="input-field col s2">
+                    <input id="prefixed" type="text" placeholder="Digite a Cidade" ng-model="dados.enderecoCidade">
+                    <label for="dataNasc" class="active">Cidade</label>
+                  </div>
+                  <div class="input-field col s1">
+                    <input id="prefixed" type="text" placeholder="Digite" ng-mode="dados.enderecoEstado">
+                    <label for="dataNasc" class="active">Estado</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <div class="input-field col s6">
+                    <div class="row">
+                      <div class="col s2">
+                        <input id="DDDcel" type="tel" placeholder="DDD" ng-model="dados.DDDcel">
+                      </div>
+                      <div class="col s10">
+                        <input id="cel" type="tel" placeholder="Digite o Celular do Investidor" ng-model="dados.cel">
+                        <label for="cel" class="active">Celular</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-field col s6">
+                    <div class="row">
+                      <div class="col s2">
+                        <input id="DDDtel" type="tel" placeholder="DDD" ng-model="dados.DDDtel">
+                      </div>
+                      <div class="col s10">
+                        <input id="telf" type="tel" placeholder="Digite o Telefone do Investidor" ng-model="dados.tel">
+                        <label for="telf" class="active">Telefone</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <div class="input-field col s6">
+                    <input id="valorAplic" type="number" placeholder="Valor do patrimônio inicial" ng-model="dados.aplicacaoInicial">
+                    <label for="valorAplic" class="active">Valor da aplicação</label>
+                  </div>
+                  <div class="input-field col s3">
+                    <input id="porcInvest" type="number" placeholder="Porcentagem do CDI" ng-model="dados.porcentagemAplicacao">
+                    <label for="porcInvest" class="active">Porcentagem</label>
+                  </div>
+                  <div class="input-field col s3">
+                    <input id="dataInvest" type="date" placeholder="Data do começo do Investimento" ng-model="dados.dataInvestimento">
+                    <label for="dataInvest" class="active">Data do Investimento</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="button-add-investidor">
+            <button class="btn waves-effect waves-light" ng-click="adicionarInvestidor()">
+              Adicionar
+              <i class="material-icons left">add</i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

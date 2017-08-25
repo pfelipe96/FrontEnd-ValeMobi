@@ -1,0 +1,16 @@
+.h1-header{
+  text-align: center;
+}
+
+button.button-voltar{
+  float: left;
+}
+
+.row{
+  margin: auto;
+}
+
+.button-add-investidor button{
+  float: right;
+  margin-right: 1%;
+}

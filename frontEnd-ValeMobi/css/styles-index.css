@@ -1,0 +1,46 @@
+.container{
+  position: relative;
+  margin-top: 20%;
+}
+
+.button-login button{
+  float: right;
+  margin-right: 10px;
+}
+
+.button-login{
+  margin-left: 35px;
+}
+.button-login a{
+  margin-left: 20px;
+  color:#546e7a;
+}
+
+.button-login a:hover{
+  color:#00897b;
+}
+
+#email::-webkit-input-placeholder{
+    color:#546e7a ;
+    font-style: bold;
+}
+
+#password::-webkit-input-placeholder{
+    color:#546e7a ;
+    font-style: bold;
+}
+
+.logo-astra{
+  position:absolute;
+  top:-5%;
+  left:50%;
+  margin-top:-50px;
+  margin-left:-50px;
+}
+
+
+@media screen and (max-width: 992px) {
+  .button-login button{
+    float: left;
+  }
+}

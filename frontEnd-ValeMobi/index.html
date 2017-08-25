@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- CSS (load materialize) -->
+        <link rel="stylesheet" href="materialize/css/materialize.css" media="screen,projection">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta charset="utf-8">
+  </head>
+  <!-- apply our angular app to our site -->
+    <body ng-app="starter">
+      <div ui-view>
+      </div>
+      <!-- JS (load angular, ui-router, and our custom js file) -->
+      <script type="text/javascript" src="javascript/jquery-3.2.1.js"></script>
+      <script type="text/javascript" src="materialize/js/materialize.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.js"></script>
+      <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+      <script src="javascript/app.js"></script>
+      <script src="javascript/controllers.js"></script>
+      <script src="javascript/services.js"></script>
+    </body>
+</html>
