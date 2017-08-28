@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <!-- CSS (load materialize) -->
-        <link rel="stylesheet" href="materialize/css/materialize.css" media="screen,projection">
+        <!-- Inicialização do BootStrap  -->
+        <link rel="stylesheet" type="text/css" href="frameworks/bootstrap-4.0.0-beta-dist/css/bootstrap.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="content-language" content="pt-br" />
         <meta charset="utf-8">
   </head>
-  <!-- apply our angular app to our site -->
     <body ng-app="starter">
-      <div ui-view>
+
+      <ng-include src="'views/header.html'">
+      </ng-include>
+
+      <div ng-view>
       </div>
-      <!-- JS (load angular, ui-router, and our custom js file) -->
-      <script type="text/javascript" src="javascript/jquery-3.2.1.js"></script>
-      <script type="text/javascript" src="materialize/js/materialize.js"></script>
+
+      <!-- Inicializacao do Angular e Angular-Router -->
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.js"></script>
-      <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+        <!-- Inicializacao do JQuery -->
+      <script type="text/javascript" src="frameworks/jquery-3.2.1.js"></script>
+
+
+      <!-- Inicializacao do APP, Services e Controllers-->
       <script src="javascript/app.js"></script>
       <script src="javascript/controllers.js"></script>
       <script src="javascript/services.js"></script>

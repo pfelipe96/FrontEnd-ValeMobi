@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="css/styles-dashBoard.css">
+<title>Teste ValeMobi</title>
+
+<section id="dashBoard">
+  <div>
+    <div class="row">
+      <div class="col-md-5 col-sm-12">
+
+        <h3 class="text-center">NEGOCIAÇÃO DE MERCADORIA</h3>
+
+        <div class="col-12">
+          <h5 class="center">Código da Mercadoria</h5>
+          <select class="form-control" ng-model="dados" ng-options="listaDado.cM for listaDado in listaDados">
+            <option value="" disabled>Escolha uma opção</option>
+          </select>
+        </div>
+
+        <div class="col-12">
+          <h5 class="center">Tipo de Mercadoria</h5>
+          <select class="form-control" ng-model="dados" ng-options="listaDado.tM for listaDado in listaDados">
+            <option value="" disabled>Escolha uma opção</option>
+          </select>
+        </div>
+
+        <div class="col-12">
+          <h5 class="center">Nome da Mercadoria</h5>
+          <select id="validationServer02" class="form-control" ng-model="dados" ng-options="listaDado.tM for listaDado in listaDados">
+            <option value="" disabled>Escolha uma opção</option>
+          </select>
+        </div>
+
+        <div class="col-12">
+          <h5 class="center">Quantidade da Mercadoria</h5>
+          <input ng-model="dados.qM" type="number" class="form-control is-valid"  placeholder="Insira a quantidade" required>
+        </div>
+
+        <div class="col-12">
+          <h5 class="center">Preço da Mercadoria</h5>
+          <select class="form-control" ng-model="dados" ng-options="listaDado.pM for listaDado in listaDados">
+            <option select value="" disabled>Escolha uma opção</option>
+          </select>
+        </div>
+
+        <div class="col-12">
+          <h5 class="center">Tipo de Negociação</h5>
+          <select class="form-control">
+            <option select value="" disabled>Escolha uma opção</option>
+            <option select ng-model="dados" ng-value="'TM'">Vender</option>
+            <option select ng-model="dados" ng-value="'TM'">Comprar</option>
+          </select>
+        </div>
+
+        <div class="col-6">
+          <button type="button" class="btn btn-primary" ng-click="finalizar(dados)">Finalizar</button>
+        </div>
+      </div>
+
+      <div class="col-md-7 col-sm-12">
+        <h3 class="text-center text-uppercase">Lista de Operações</h3>
+        <table class="table table-responsive">
+          <thead class="thead-default">
+            <tr>
+              <th class="text-center">Código da Mercadoria</th>
+              <th class="text-center">Tipo de Mercadoria</th>
+              <th class="text-center">Nome da Mercadoria</th>
+              <th class="text-center">Quantidade Mercadoria</th>
+              <th class="text-center">Preço da Mercadoria</th>
+              <th class="text-center">Tipo de Negócio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="cadaItem in obterLista">
+              <td class="text-center">{{cadaItem.cM}}</td>
+              <td class="text-center">{{cadaItem.tM}}</td>
+              <td class="text-center">{{cadaItem.nM}}</td>
+              <td class="text-center">{{cadaItem.qM}}</td>
+              <td class="text-center">{{cadaItem.pM}}</td>
+              <td class="text-center">{{cadaItem.tN}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

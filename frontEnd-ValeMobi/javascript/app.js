@@ -1,43 +1,21 @@
-var app = angular.module('starter', ['ui.router', 'starter.controllers', 'starter.services']);
+var app = angular.module('starter',['ngRoute', 'starter.controllers']);
 
-app.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
-    .state('login', {
-      url: '/login',
-      templateUrl: 'login.html',
-      controller: 'LoginController'
-    })
+app.config(function($routeProvider, $locationProvider)
+{
 
-    .state('header', {
-      url: '/header',
-      templateUrl: 'header.html',
-      controller: 'HeaderController'
-    })
+    // remove o # da url
+    $locationProvider.html5Mode({
+     enabled: true,
+     requireBase: false
+    });
 
-    .state('investidores', {
-      url: '/investidores',
-      templateUrl: 'investidores.html',
-      controller: 'InvestidoresController'
-    })
+   $routeProvider
+   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
+   .when('/', {
+      templateUrl : 'views/dashBoard.html',
+      controller  : 'dashBoardController',
+   })
 
-    .state('cadastro-investidor', {
-      url: '/cadastro-investidor',
-      templateUrl: 'cadastro-investidor.html',
-      controller: 'CadastroInvestidorController'
-    })
-
-    .state('detalhe-ValorAtual', {
-      url: '/detalhe-ValorAtual/',
-      templateUrl: 'detalhe-ValorAtual.html',
-      controller: 'DetalheValorAtualController'
-    })
-
-    .state('detalhe-investidor', {
-      url: '/detalhe-investidor/:id',
-      templateUrl: 'detalhe-investidor.html',
-      controller: 'DetalheInvestidorController'
-    })
-
-    // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/login');
-  });
+   // caso não seja nenhum desses, redirecione para a rota '/'
+   .otherwise ({ redirectTo: '/' });
+});

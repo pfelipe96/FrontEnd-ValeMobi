@@ -1,0 +1,31 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Desafio ValeMobi ",
+  "main": "index.js",
+  "dependencies": {
+    "angular-ui-router": "^1.0.3",
+    "body-parser": "^1.17.2",
+    "directory": "^0.1.0",
+    "express": "^4.15.3",
+    "path": "^0.12.7",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pfelipe96/PrimeiroDesafio-ValeMobi.git"
+  },
+  "author": "Paulo Felipe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pfelipe96/PrimeiroDesafio-ValeMobi/issues"
+  },
+  "homepage": "https://github.com/pfelipe96/PrimeiroDesafio-ValeMobi#readme"
+}

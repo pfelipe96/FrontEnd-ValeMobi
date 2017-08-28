@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 // Ferramenta utilizada para trajetória de arquivo
-app.use(express.static(path.join(__dirname, '/frontEnd-astra')));
+app.use(express.static(path.join(__dirname, '/frontEnd-ValeMobi')));
 
 
 app.use(function(req, res, next){
@@ -29,7 +29,7 @@ app.use(function(req, res, next){
 
 // Inicializar a cliente
 app.get('/*', function (req, res) {
-  res.sendfile('frontEnd-astra/index.html');
+  res.sendfile('frontEnd-ValeMobi/index.html');
 });
 
 // Chamar o servidor

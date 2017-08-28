@@ -1,3 +1,9 @@
-.brand-logo{
-  margin-left: 2%;
+.logo img{
+  width: 4rem;
+  height: auto;
+  border-radius: 50%;
+}
+
+nav{
+  background-color: #bdbdbd ;
 }
