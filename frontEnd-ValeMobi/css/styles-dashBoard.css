@@ -1,3 +1,7 @@
+body{
+  background-color:#fafafa ;
+}
+
 section{
   margin:2% 2% auto 2%;
 }
@@ -8,4 +12,15 @@ section h3:first-child{
 
 select, input, button{
   margin-bottom: 1rem;
+}
+thead{
+
+}
+
+thead, tbody { display: block; }
+
+tbody {
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }

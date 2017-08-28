@@ -24,14 +24,14 @@
 
         <div class="col-12">
           <h5 class="center">Nome da Mercadoria</h5>
-          <select id="validationServer02" class="form-control" ng-model="dados" ng-options="listaDado.tM for listaDado in listaDados">
+          <select id="validationServer02" class="form-control" ng-model="dados" ng-options="listaDado.nM for listaDado in listaDados">
             <option value="" disabled>Escolha uma opção</option>
           </select>
         </div>
 
         <div class="col-12">
           <h5 class="center">Quantidade da Mercadoria</h5>
-          <input ng-model="dados.qM" type="number" class="form-control is-valid"  placeholder="Insira a quantidade" required>
+          <input ng-disabled="!dados.cM" ng-model="dados.qM" type="number" class="form-control is-valid"  placeholder="Insira a quantidade" required>
         </div>
 
         <div class="col-12">
@@ -43,39 +43,40 @@
 
         <div class="col-12">
           <h5 class="center">Tipo de Negociação</h5>
-          <select class="form-control">
-            <option select value="" disabled>Escolha uma opção</option>
-            <option select ng-model="dados" ng-value="'TM'">Vender</option>
-            <option select ng-model="dados" ng-value="'TM'">Comprar</option>
+          <select ng-disabled="!dados.cM" class="form-control" ng-model="tipoN">
+            <option select="select" value="" disabled>Escolha uma opção</option>
+            <option ng-value="'Venda'">Vende</option>
+            <option ng-value="'Compra'">Compra</option>
           </select>
         </div>
-
         <div class="col-6">
-          <button type="button" class="btn btn-primary" ng-click="finalizar(dados)">Finalizar</button>
+          <button type="button" class="btn btn-success" ng-click="finalizar(dados, tipoN)">Finalizar</button>
         </div>
+        <p class="text-center">{{erro}}</p>
       </div>
 
       <div class="col-md-7 col-sm-12">
         <h3 class="text-center text-uppercase">Lista de Operações</h3>
         <table class="table table-responsive">
-          <thead class="thead-default">
-            <tr>
-              <th class="text-center">Código da Mercadoria</th>
-              <th class="text-center">Tipo de Mercadoria</th>
-              <th class="text-center">Nome da Mercadoria</th>
-              <th class="text-center">Quantidade Mercadoria</th>
-              <th class="text-center">Preço da Mercadoria</th>
-              <th class="text-center">Tipo de Negócio</th>
+          <thead class="thead-inverse">
+            <tr class="row">
+              <th class="col-2 col-sm-2 text-center">Código da Mercadoria</th>
+              <th class="col-2 col-sm-2 text-center">Tipo de Mercadoria</th>
+              <th class="col-2 col-sm-2 text-center">Nome da Mercadoria</th>
+              <th class="col-2 col-sm-2 text-center">Quantidade Mercadoria</th>
+              <th class="col-2 col-sm-2 text-center">Preço da Mercadoria</th>
+              <th class="col-2 col-sm-2 text-center">Tipo de Negócio</th>
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="cadaItem in obterLista">
-              <td class="text-center">{{cadaItem.cM}}</td>
-              <td class="text-center">{{cadaItem.tM}}</td>
-              <td class="text-center">{{cadaItem.nM}}</td>
-              <td class="text-center">{{cadaItem.qM}}</td>
-              <td class="text-center">{{cadaItem.pM}}</td>
-              <td class="text-center">{{cadaItem.tN}}</td>
+            <tr class="row table-border" ng-repeat="cadaItem in obterListaInvertido">
+              <td class="col-12 col-sm-12 text-center">{{cadaItem.dN}}</td>
+              <td class="col-2 col-sm-2 text-center">{{cadaItem.cM}}</td>
+              <td class="col-2 col-sm-2 text-center">{{cadaItem.tM}}</td>
+              <td class="col-2 col-sm-2 text-center">{{cadaItem.nM}}</td>
+              <td class="col-2 col-sm-2 text-center">{{cadaItem.qM}}</td>
+              <td class="col-2 col-sm-2 text-center">{{cadaItem.pM}}</td>
+              <td class="col-2 col-sm-2 text-center">{{cadaItem.tN}}</td>
             </tr>
           </tbody>
         </table>
