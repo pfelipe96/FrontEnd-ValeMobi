@@ -17,7 +17,7 @@ angular.module('starter.controllers', [])
   ];
 
   // Recuperar lista do DataBase
-  $http.get('http://localhost:3000/recuperar-negociacoes').then(function(resposta){
+  $http.get('http://192.168.10.69:3000/recuperar-negociacoes').then(function(resposta){
     var obterLista = resposta.data;
     $scope.obterListaInvertido = obterLista.slice(0).reverse();
     console.log($scope.obterListaInvertido);
@@ -25,12 +25,13 @@ angular.module('starter.controllers', [])
 
   // Enviar os dados para o DataBase
   $scope.finalizar = function (dados, tipoN) {
+
     var dataNow = new Date;
     var dataNegociacao = String(dataNow.getUTCDate()+"/"+(dataNow.getMonth()+1) +"/"+ dataNow.getUTCFullYear()+" às "+dataNow.getHours()+":"+dataNow.getMinutes()+":"+dataNow.getSeconds());
     dados.tN = tipoN;
     dados.dN = dataNegociacao;
 
-    $http.post('http://localhost:3000/negociacao', dados).then(function(resposta){
+    $http.post('http://192.168.10.69:3000/negociacao', dados).then(function(resposta){
         $route.reload('/');
     }, function(resposta){
 

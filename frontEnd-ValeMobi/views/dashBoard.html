@@ -4,7 +4,7 @@
 <section id="dashBoard">
   <div>
     <div class="row">
-      <div class="col-md-5 col-sm-12">
+      <div class="col-xl-5 col-md-12 col-12">
 
         <h3 class="text-center">NEGOCIAÇÃO DE MERCADORIA</h3>
 
@@ -50,28 +50,28 @@
           </select>
         </div>
         <div class="col-6">
-          <button type="button" class="btn btn-success" ng-click="finalizar(dados, tipoN)">Finalizar</button>
+          <button ng-disabled="!dados.cM" type="button" class="btn btn-success" ng-click="finalizar(dados, tipoN)">Finalizar</button>
         </div>
         <p class="text-center">{{erro}}</p>
       </div>
 
-      <div class="col-md-7 col-sm-12">
+      <div class="col-xl-7 col-md-12 col-12">
         <h3 class="text-center text-uppercase">Lista de Operações</h3>
         <table class="table table-responsive">
           <thead class="thead-inverse">
             <tr class="row">
-              <th class="col-2 col-sm-2 text-center">Código da Mercadoria</th>
-              <th class="col-2 col-sm-2 text-center">Tipo de Mercadoria</th>
-              <th class="col-2 col-sm-2 text-center">Nome da Mercadoria</th>
-              <th class="col-2 col-sm-2 text-center">Quantidade Mercadoria</th>
-              <th class="col-2 col-sm-2 text-center">Preço da Mercadoria</th>
-              <th class="col-2 col-sm-2 text-center">Tipo de Negócio</th>
+              <th class="col-2 col-sm-2 text-lg-center text-right">Código da Mercadoria</th>
+              <th class="col-2 col-sm-2 text-lg-center text-center">Tipo de Mercadoria</th>
+              <th class="col-2 col-sm-2 text-lg-center text-center">Nome da Mercadoria</th>
+              <th class="col-2 col-sm-2 text-lg-center text-center">Quantidade Mercadoria</th>
+              <th class="col-2 col-sm-2 text-lg-center text-center">Preço da Mercadoria</th>
+              <th class="col-2 col-sm-2 text-lg-center text-center">Tipo de Negócio</th>
             </tr>
           </thead>
           <tbody>
             <tr class="row table-border" ng-repeat="cadaItem in obterListaInvertido">
-              <td class="col-12 col-sm-12 text-center">{{cadaItem.dN}}</td>
-              <td class="col-2 col-sm-2 text-center">{{cadaItem.cM}}</td>
+              <td ng-class="{'venda': cadaItem.tN == 'Venda', 'compra': cadaItem.tN != 'Venda' }" class="col-12 text-center">{{cadaItem.dN}}</td>
+              <td class="col-2 col-sm-2 text-lg-center text-right">{{cadaItem.cM}}</td>
               <td class="col-2 col-sm-2 text-center">{{cadaItem.tM}}</td>
               <td class="col-2 col-sm-2 text-center">{{cadaItem.nM}}</td>
               <td class="col-2 col-sm-2 text-center">{{cadaItem.qM}}</td>

@@ -24,3 +24,31 @@ tbody {
     overflow-y: auto;
     overflow-x: hidden;
 }
+
+.compra{
+  background-color: red;
+  color: #fff;
+}
+
+.venda{
+  background-color: green;
+  color: #fff;
+}
+/*Mobile*/
+@media screen and (max-width: 750px) {
+    section{
+        margin: auto;
+    }
+    th, td{
+      font-size: 0.6rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    section{
+        margin: auto;
+    }
+    th, td{
+      font-size: 0.5rem;
+    }
+}

@@ -2,7 +2,9 @@ var express = require('express'),
     url = require('url');
     path = require('path'),
     bodyParser = require('body-parser'),
-    app = express();
+    http = require('http'),
+    app = express(),
+    server = http.createServer(app);
 
 // Liberar acesso aos broswer
 app.use(function (req, res, next) {
@@ -33,7 +35,8 @@ app.get('/*', function (req, res) {
 });
 
 // Chamar o servidor
-app.set('port', process.env.PORT || 8080);
-var server = app.listen(app.get('port'), function() {
+server.listen(8080, '138.197.88.245');
 
+server.on('listening', function() {
+    console.log('Express server started on port %s at %s', server.address().port, server.address().address);
 });
