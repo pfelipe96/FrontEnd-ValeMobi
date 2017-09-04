@@ -57,7 +57,7 @@ O sistema está rodando via servidor, pelo DigitalOcean.
    - api.js - responsável por controlar o recebimento e o inserimendo do banco de dados via API, e verificar as condições do 
    recebimento de dados do Client.
 
-[Clique aqui para ser retirecionado para o respositório do backend.](https://github.com/pfelipe96/backend-ValeMobi/)
+[Clique aqui para ser redirecionado para o respositório do backend.](https://github.com/pfelipe96/backend-ValeMobi/)
 
    
  ### A estrutura do banco de dados está sendo feito via JSON, segue abaixo:
